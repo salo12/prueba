@@ -1,5 +1,7 @@
 class LibrosController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
   before_action :set_libro, only: [:show, :edit, :update, :destroy]
+
 
   # GET /libros
   # GET /libros.json
