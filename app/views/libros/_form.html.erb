@@ -1,0 +1,38 @@
+
+<%= bootstrap_form_for(@libro) do |form| %>
+  <% if libro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(libro.errors.count, "error") %> prohibited this libro from being saved:</h2>
+
+      <ul>
+      <% libro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :libro_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edicion %>
+    <%= form.text_field :edicion, id: :libro_edicion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor, id: :libro_autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :editorial %>
+    <%= form.text_field :editorial, id: :libro_editorial %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
