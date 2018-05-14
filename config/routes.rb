@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :autors
 root :to => "welcome#index"
 
   #root  "libros#index"
